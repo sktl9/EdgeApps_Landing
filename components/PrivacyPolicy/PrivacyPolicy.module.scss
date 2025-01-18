@@ -1,0 +1,35 @@
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.content{
+    padding: 36px;
+    border-radius: 16px;
+    background-color: #fff;
+    margin: 0 16px;
+    .h1 {
+        font-weight: 600;
+
+        @media (max-width: 900px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 18px;
+        }
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 20px;
+
+        @media (max-width: 600px) {
+            line-height: 18px;
+            font-size: 14px;
+        }
+    }
+}
+

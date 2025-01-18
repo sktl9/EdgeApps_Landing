@@ -1,0 +1,450 @@
+.flex{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  height: auto;
+}
+
+.container {
+  height: 100;
+  max-width: 100%;
+}
+
+.backgroundVideo {
+  height: 100vh; /* видео будет по высоте 100% */
+  width: 100%; /* ширина видео будет автоматически подстраиваться */
+  object-fit: cover; /* сохраним пропорции, но обрежем лишнее по бокам */
+}
+
+.content {
+  position: absolute;
+  width: 80%;
+  top: 80%; /* центр по вертикали */
+  left: 50%; /* центр по горизонтали */
+  transform: translate(-50%, -50%); /* смещаем центр в точку позиционирования */
+  display: flex;
+  flex-direction: column;
+  color: white; /* текст белого цвета */
+  gap: 20px; /* отступы между строками */
+}
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: #cecece 1px solid;
+  width: 100%; /* Ширина полоски в процентах */
+  padding-bottom: 20px; /* Отступ снизу перед границей */
+}
+.mainText {
+  font-size: clamp(1rem, 10vw, 3rem); /* Минимум 1rem, адаптация до 5vw, максимум 3rem */
+  word-break: break-word; /* Чтобы текст не вылезал за пределы */
+}
+.underContent{
+  display: flex;
+  gap:20px
+}
+.blockAbout1{
+  width: 50%;
+display: flex;
+flex-direction: column;
+gap: 50px;
+}
+
+.blockAbout2{
+  width: 50%;
+  display: flex;
+  gap:50px;
+  font-size: 10px
+}
+
+.textAbout{
+  width: 70%;
+  text-wrap: wrap;
+  font-size: clamp(8px, 2vw, 12px);
+}
+.miniNav{
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+  cursor: pointer;
+  font-size: clamp(1rem, 3vw, 3rem);
+  text-wrap: wrap;
+}
+
+.news{
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap:50px;
+  font-size: clamp(8px, 2vw, 12px);
+}
+.logoMini{
+  width: 14px;
+  height: 16px;
+}
+
+
+@media (max-width: 900px) {
+  .content {
+    top: 60%; /* Отступ сверху, чтобы текст начинался выше */
+    width: 90%; /* Немного уменьшаем ширину */
+  }
+
+
+
+  .mainText {
+    font-size: clamp(1rem, 8vw, 2.5rem); /* Уменьшаем максимум */
+    line-height: 1.2; /* Более плотный текст */
+  }
+
+  .underContent {
+    flex-direction: column; /* Вертикальная ориентация */
+    gap: 30px; /* Увеличиваем отступы */
+  }
+
+  .blockAbout1, .blockAbout2 {
+    width: 100%; /* Блоки занимают всю ширину */
+    gap: 50px; /* Уменьшаем отступы */
+  }
+
+  .miniNav {
+    font-size: 25px;
+    gap: 50px; /* Уменьшаем отступы */
+    border-bottom: #cecece 1px solid;
+    padding-bottom: 20px;
+  }
+
+  .textAbout {
+    
+    font-size: clamp(12px, 3vw, 16px); /* Подстройка размера */
+  }
+
+  .news {
+    max-width: 100%;
+    gap: 20px; /* Уменьшаем отступы между новостями */
+  }
+
+  .logoMini {
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    top: 60%; /* Отступ сверху, чтобы текст начинался выше */
+    width: 90%; /* Немного уменьшаем ширину */
+  }
+
+  .mainText {
+    font-size: clamp(1rem, 8vw, 2.5rem); /* Уменьшаем максимум */
+    line-height: 1.2; /* Более плотный текст */
+  }
+
+  .underContent {
+    flex-direction: column; /* Вертикальная ориентация */
+    gap: 30px; /* Увеличиваем отступы */
+  }
+
+  .blockAbout1 {
+    width: 100%; /* Блоки занимают всю ширину */
+    gap: 50px; /* Уменьшаем отступы */
+  }
+  .blockAbout2{
+    display: flex;
+    flex-direction: column;
+    gap:20px
+  }
+
+  .miniNav {
+    gap: 50px; /* Уменьшаем отступы */
+    border-bottom: #cecece 1px solid;
+    padding-bottom: 20px;
+  }
+
+  .textAbout {
+    
+    font-size: clamp(12px, 3vw, 16px); /* Подстройка размера */
+  }
+
+  .news {
+    max-width: 100%;
+    gap: 20px; /* Уменьшаем отступы между новостями */
+    font-size: clamp(12px, 3vw, 16px); /* Подстройка размера */
+  }
+
+  .logoMini {
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+  }
+  .spanAbout{
+    border-bottom: #cecece 1px solid;
+    padding-bottom: 20px;
+  }
+}
+
+.label_container {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(20px, 5vw, 34px);
+ 
+  color: #ffffff; /* Белый текст */
+}
+
+.notification_badge {
+  position: absolute;
+  top: -10px; /* Сдвиг сверху */
+  right: -25px; /* Сдвиг справа */
+  border: 1px solid #ffffff; /* Синий фон по умолчанию */
+  color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Делает круг */
+  font-size: 14px;
+  padding: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.label_container:hover .notification_badge {
+  background-color: #90da6e; /* Зеленый при наведении на текст или кружок */
+}
+
+.wrapper {
+  margin-top: 64px;
+  padding-top: 108px;
+  overflow: hidden;
+  min-height: 880px;
+  height: calc(100vh - 64px);
+  max-width: 100vw;
+  position: relative;
+  h1 {
+    z-index: 100;
+    font-weight: 700;
+    font-size: 64px;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    z-index: 100;
+    margin: 0 auto;
+    font-size: 24px;
+    max-width: 560px;
+    margin-bottom: 16px;
+    display: block;
+    text-align: center;
+  }
+
+  button {
+    z-index: 100;
+    width: 202px;
+    padding: 16px 0px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 68px;
+
+    /* App/button */
+    span {
+      z-index: 100;
+      font-family: Inter;
+      font-size: 17px;
+      color: #55bbeb;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 17px */
+    }
+  }
+}
+
+.white {
+  color: #fff;
+}
+
+.phoneScreen {
+  display: flex;
+  position: absolute;
+  bottom: -223px;
+  left: 50%;
+  transform: translate(-50%);
+  align-items: flex-end;
+}
+
+.firstLine {
+  height: 2px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 95px;
+  width: 100vw;
+}
+
+.secondLine {
+  height: 2px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 426px;
+  width: 100vw;
+}
+
+.line3 {
+  height: 2px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 755px;
+  width: 100vw;
+}
+
+.line4 {
+  height: 2px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 1084px;
+  width: 100vw;
+}
+
+.thirdLine {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% - 329px);
+  transform: translate(-50%);
+}
+
+.fourthLine {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% + 329px);
+  transform: translate(-50%);
+}
+
+.fifthLine {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50%);
+  transform: translate(-50%);
+}
+
+.line5 {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% + 329px + 329px);
+  transform: translate(-50%);
+}
+
+.line6 {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% + 329px + 329px + 329px);
+  transform: translate(-50%);
+}
+
+.line7 {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% - 329px - 329px);
+  transform: translate(-50%);
+}
+
+.line8 {
+  height: 100vh;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  left: calc(50% - 329px - 329px - 329px);
+  transform: translate(-50%);
+}
+
+.phoneBgc {
+  width: fit-content;
+  height: 679px;
+}
+
+.book:hover {
+  background-color: #d9f5fd;
+}
+
+// Анимацияяяяя
+
+// Стили для сетки
+.grid {
+  display: grid;
+  position: absolute;
+  z-index: 0;
+  top: 105px;
+  left: calc(50% - 658px);
+  width: 329px;
+  height: 329px;
+  grid-template-columns: repeat(6, 54.833px);
+  grid-template-rows: repeat(6, 54.833px);
+}
+
+.gridSecond {
+  display: grid;
+  position: absolute;
+  z-index: 0;
+  top: 105px;
+  right: calc(50% - 658px); // Изменено на 'right'
+  width: 329px;
+  height: 329px;
+  grid-template-columns: repeat(6, 54.833px);
+  grid-template-rows: repeat(6, 54.833px);
+}
+
+// Стили и анимация для квадратов
+.square {
+  width: 54.833px; // увеличиваем ширину
+  height: 54.833px;
+  background-color: #55bbeb;
+  animation-name: square-anim;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+// Определение ключевых кадров для анимации
+@keyframes square-anim {
+  0%,
+  60% {
+    opacity: 0.7;
+    background-color: #55bbeb;
+  }
+  100% {
+    opacity: 0.8;
+    background-color: #ffffff;
+  }
+}

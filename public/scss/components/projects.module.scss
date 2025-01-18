@@ -1,0 +1,29 @@
+.mainContainer{
+    padding: 30px 10%;
+}
+
+.actual{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.actualSpan{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #B3B3B3; 
+}
+
+.flex{
+    display: flex;
+    width: 100%;
+}
+
+.firstHalfActual{
+    width: 50%;
+    font-size: 34px;
+}
+
+.secondHalfActual{
+    width: 50%;
+    font-size: 12px;
+}

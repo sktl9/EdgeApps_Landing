@@ -1,0 +1,287 @@
+.price {
+  &-background {
+    background-color: #d2e9f9;
+  }
+
+  &-title {
+    color: #55bbeb;
+    font-family: Roboto;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &-button {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    padding: 14px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    color: #fff;
+    background-color: #55bbeb;
+    border: none;
+    border-radius: 6px;
+  }
+
+  &-full-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1186px;
+    width: 100%;
+    margin: 112px auto;
+    padding: 0 25px;
+  }
+
+  &--h1 {
+    font-family: Inter;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &--p {
+    max-width: 410px;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &-button {
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 16px 24px;
+    background-color: #71bd4e;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &-button:hover {
+    background-color: #90da6e;
+  }
+
+  &-button:active {
+    transform: scale(1.05);
+  }
+
+  &-link {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    margin-top: 64px;
+    width: 100%;
+    gap: 16px;
+  }
+
+  &__content {
+    width: 368px;
+    height: 524px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+
+    &-title {
+      color: #55bbeb;
+      font-family: Roboto;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-top: 99px;
+
+      &.active {
+        color: #fff;
+        margin-top: 57px;
+      }
+    }
+
+    &-popular {
+      margin-top: 3px;
+      margin-left: 3px;
+      padding: 8px 16px;
+      border-radius: 32px 0px 100px 0px;
+      background-color: #fff;
+      color: #55bbeb;
+      font-family: Roboto;
+      font-size: 24px;
+      align-self: start;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    &-p {
+      padding: 0 5px;
+      max-width: 315px;
+      text-align: center;
+      color: #232f37;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 36px;
+
+      &.active {
+        color: #fff;
+      }
+    }
+
+    &-p3 {
+      max-width: 315px;
+      text-align: center;
+      color: #55bbeb;
+      text-align: center;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-top: 8px;
+
+      &.active {
+        color: #fff;
+      }
+    }
+
+    &-active {
+      color: #fff;
+      width: 368px;
+      height: 524px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #55bbeb;
+      border-radius: 16px;
+      height: 565px;
+      background-image: url("/static/image/backgroundPrice.png");
+      background-size: 286px auto;
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+    }
+  }
+}
+
+/* Стили для списка с точками */
+.list-with-dots {
+  list-style: none; /* Убираем стандартные маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
+  margin-top: 64px !important;
+  width: 207px;
+}
+
+.list-with-dots li {
+  font-family: "Roboto", sans-serif; /* Устанавливаем шрифт, если он подключен */
+  font-size: 16px; /* Примерный размер шрифта, настраиваемый */
+  color: #333; /* Цвет текста */
+  margin-bottom: 24px; /* Отступы между элементами списка */
+  position: relative; /* Позиционирование для псевдоэлемента */
+  padding-left: 30px; /* Отступ для текста, чтобы учесть место для точки */
+  color: #232f37;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list-with-dots li::before {
+  content: ""; /* Содержимое псевдоэлемента, точка */
+  position: absolute; /* Абсолютное позиционирование относительно li */
+  left: 0; /* Расположение слева */
+  top: 50%; /* Расположение по центру высоты элемента li */
+  transform: translateY(-50%); /* Центрирование точки по вертикали */
+  width: 8px; /* Диаметр точки */
+  height: 8px; /* Диаметр точки */
+  background-color: #cbd5e0; /* Цвет точки */
+  border-radius: 50%; /* Скругление для создания круглой точки */
+}
+
+/* Стили для списка с точками */
+.list-with-dots1 {
+  list-style: none; /* Убираем стандартные маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
+  margin-top: 64px !important;
+  width: 207px;
+}
+
+.list-with-dots1 li {
+  font-family: "Roboto", sans-serif; /* Устанавливаем шрифт, если он подключен */
+  font-size: 16px; /* Примерный размер шрифта, настраиваемый */
+  color: #fff; /* Цвет текста */
+  margin-bottom: 24px; /* Отступы между элементами списка */
+  position: relative; /* Позиционирование для псевдоэлемента */
+  padding-left: 30px; /* Отступ для текста, чтобы учесть место для точки */
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list-with-dots1 li::before {
+  content: ""; /* Содержимое псевдоэлемента, точка */
+  position: absolute; /* Абсолютное позиционирование относительно li */
+  left: 0; /* Расположение слева */
+  top: 50%; /* Расположение по центру высоты элемента li */
+  transform: translateY(-50%); /* Центрирование точки по вертикали */
+  width: 8px; /* Диаметр точки */
+  height: 8px; /* Диаметр точки */
+  background-color: #fff; /* Цвет точки */
+  border-radius: 50%; /* Скругление для создания круглой точки */
+}
+
+.apple {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none;
+}
+
+.synaq-logo {
+  width: 154px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.synaq-logo:active {
+  animation: clickScale 1s ease;
+}
+
+@keyframes clickScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1300px) {
+  .middle-background {
+    background-size: 700px auto;
+    background-position: calc(120% - 15px) calc(50% + 40px);
+  }
+}

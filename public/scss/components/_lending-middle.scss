@@ -1,0 +1,140 @@
+.middle {
+  &-background {
+    background-color: #d2e9f9;
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &-button {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    padding: 14px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    color: #fff;
+    background-color: #55bbeb;
+    border: none;
+    border-radius: 6px;
+  }
+
+  &-container {
+    max-width: 560px;
+    min-height: calc(100vh - 64px - 105.5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-full-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1136px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  &--h1 {
+    font-family: Inter;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &--p {
+    max-width: 410px;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &-button {
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 16px 24px;
+    background-color: #71bd4e;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &-button:hover {
+    background-color: #90da6e;
+  }
+
+  &-button:active {
+    transform: scale(1.05);
+  }
+
+  &-link {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+// @media (min-width: 1920px) {
+//   .middle {
+//     &-background {
+//       height: calc(100vh - 64px - 82px);
+//       min-height: 790px;
+//       background-size: 800px 800px;
+//       background-position: calc(100% - 250px) calc(50% + 40px);
+//     }
+
+//     &-container {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       max-width: 1096px;
+//       margin: 0 auto;
+//       padding: 0 15px;
+//     }
+//   }
+// }
+
+.apple {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none;
+}
+
+.synaq-logo {
+  width: 154px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.synaq-logo:active {
+  animation: clickScale 1s ease;
+}
+
+@keyframes clickScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1300px) {
+  .middle-background {
+    background-size: 700px auto;
+    background-position: calc(120% - 15px) calc(50% + 40px);
+  }
+}

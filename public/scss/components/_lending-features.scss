@@ -1,0 +1,207 @@
+.features {
+  &-background {
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  &-title {
+    color: #55bbeb;
+    font-family: Roboto;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &-button {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    padding: 14px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    color: #fff;
+    background-color: #55bbeb;
+    border: none;
+    border-radius: 6px;
+  }
+
+  &__img {
+    max-width: 383px;
+    height: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &-full-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 962px;
+    width: 100%;
+    margin: 112px auto;
+    padding: 0 25px;
+  }
+
+  &--h1 {
+    font-family: Inter;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &--p {
+    max-width: 410px;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #364954;
+  }
+
+  &-button {
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 16px 24px;
+    background-color: #71bd4e;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &-button:hover {
+    background-color: #90da6e;
+  }
+
+  &-button:active {
+    transform: scale(1.05);
+  }
+
+  &-link {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 94px;
+    width: 100%;
+    gap: 128px;
+  }
+
+  &__content {
+    width: 368px;
+    height: 524px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+
+    &-title {
+      color: #55bbeb;
+      font-family: Roboto;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-top: 99px;
+
+      &.active {
+        color: #fff;
+        margin-top: 57px;
+      }
+    }
+
+    &-p {
+      color: #232f37;
+
+      &.active {
+        color: #fff;
+      }
+    }
+
+    &-active {
+      color: #fff;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__right {
+    max-width: 368px;
+
+    &-title {
+      color: #232f37;
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    &-p {
+      margin-top: 24px;
+      color: #232f37;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+}
+
+/* Стили для списка с точками */
+.features-with-dots {
+  list-style: none; /* Убираем стандартные маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
+  margin-top: 24px !important;
+  width: 100%;
+}
+
+.features-with-dots li {
+  font-family: "Roboto", sans-serif; /* Устанавливаем шрифт, если он подключен */
+  font-size: 16px; /* Примерный размер шрифта, настраиваемый */
+  color: #333; /* Цвет текста */
+  margin-bottom: 24px; /* Отступы между элементами списка */
+  position: relative; /* Позиционирование для псевдоэлемента */
+  padding-left: 30px; /* Отступ для текста, чтобы учесть место для точки */
+  color: #232f37;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.features-with-dots li:last-child {
+  margin-bottom: 0;
+}
+
+.features-with-dots li::before {
+  content: ""; /* Содержимое псевдоэлемента, точка */
+  position: absolute; /* Абсолютное позиционирование относительно li */
+  left: 0; /* Расположение слева */
+  top: 50%; /* Расположение по центру высоты элемента li */
+  transform: translateY(-50%); /* Центрирование точки по вертикали */
+  width: 8px; /* Диаметр точки */
+  height: 8px; /* Диаметр точки */
+  background-color: #55bbeb; /* Цвет точки */
+  border-radius: 50%;
+}
+
+// ______________________________________________________________________________
