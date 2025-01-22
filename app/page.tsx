@@ -5,6 +5,7 @@ import "../public/scss/style.css"
 import LandingHeader from "@/components/Header/LandingHeader";
 import Projects from "@/components/Projects/Projects"
 import BodyMiddle from "@/components/Body/BodyMiddle";
+import Advantages from "@/components/Advantages/Advantages";
 import dynamic from "next/dynamic";
 import Price from "@/components/Price/Price";
 import Features from "@/components/Feautures/Features";
@@ -24,6 +25,7 @@ export default function Home() {
       <LandingHeader activePage={activePage} />
       <FirstWindow setActivePage={setActivePage} />
       <Projects />
+      <Advantages/>
       {/* <Team setActivePage={setActivePage} /> */}
       <Footer setActivePage={setActivePage} />
       <UltraFooter />

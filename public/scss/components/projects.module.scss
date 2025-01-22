@@ -1,29 +1,282 @@
-.mainContainer{
-    padding: 30px 10%;
+.mainContainer {
+  margin-top: 30px;
+  padding: 30px 10%;
 }
 
-.actual{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.actual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.actualSpan{
-    padding-bottom: 15px;
-    border-bottom: 1px solid #B3B3B3; 
+.actualSpan {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #B3B3B3;
 }
 
-.flex{
-    display: flex;
-    width: 100%;
+.flex {
+  display: flex;
+  width: 100%;
 }
 
-.firstHalfActual{
-    width: 50%;
-    font-size: 34px;
+.firstHalfActual {
+  width: 50%;
+  font-size: 34px;
 }
 
-.secondHalfActual{
-    width: 50%;
-    font-size: 12px;
+.secondHalfActual {
+  width: 50%;
+  font-size: 12px;
+}
+
+.callUs {
+  max-width: 250px;
+  margin-left: 1%;
+  height: 32px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #1b1b1b;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #1b1b1b;
+  /* Исходный цвет текста */
+  background-color: transparent;
+  text-wrap: nowrap;
+  border-radius: 6rem;
+  overflow: hidden;
+  transition: color 1.3s ease, background-color 1.3s ease;
+  /* Плавное изменение цвета и фона */
+  font-size: clamp(12px, 9px, 12px);
+
+  &:hover {
+    color: #ffffff;
+    /* Цвет текста при наведении, например, темно-серый */
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    /* Начинаем с левого верхнего угла */
+    top: 0;
+    width: 6.7rem;
+    height: 6.7rem;
+    background-color: #0041F9;
+    border-radius: 50%;
+    z-index: -1;
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 0.9s ease-in-out;
+  }
+
+  &:hover::before {
+    transform: scale(3);
+    /* Увеличиваем до полного размера */
+  }
+
+  &--active {
+    border: 2px solid #ffffff;
+    /* Если нужен выделенный активный стиль */
+  }
+
+  &.scrolled {
+    background-color: #ffffff; // Фон при прокрутке
+    color: #333333; // Цвет текста при прокрутке
+    border: 1px solid #333333;
+  }
+}
+
+
+.card {
+  background-color: #f9f9f9;
+  height: 350px;
+  border-radius: 2rem;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  /* Анимация трансформации */
+}
+
+.card:hover {
+  transform: scale(1.0);
+  /* Небольшое увеличение карточки при наведении */
+}
+
+.greenBackground {
+  border-radius: 15%;
+  background-color: #90ed7b;
+  /* Ярко-зеленый фон */
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  transform: rotate(-45deg);
+  bottom: -10%;
+  left: -30%;
+  z-index: 0;
+  transition: all 0.8s ease;
+  /* Плавная анимация изменений */
+  box-shadow: -20px 20px 0 rgba(0, 128, 0, 0.1);
+  /* Тень без размытия */
+}
+
+.greenBackground2 {
+  border-radius: 15%;
+  background-color: #7CE4ED;
+  /* Ярко-зеленый фон */
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  transform: rotate(-45deg);
+  bottom: 50%;
+  left: -50%;
+  z-index: 0;
+  transition: all 0.8s ease;
+  /* Плавная анимация изменений */
+  box-shadow: -20px 20px 0 rgba(0, 128, 0, 0.1);
+  /* Тень без размытия */
+}
+
+.greenBackground3 {
+  border-radius: 15%;
+  background-color: #5FB2ED;
+  /* Ярко-зеленый фон */
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  transform: rotate(-45deg);
+  bottom: -30%;
+  left: 30%;
+  z-index: 0;
+  transition: all 0.8s ease;
+  /* Плавная анимация изменений */
+  box-shadow: 20px -20px 0 rgba(0, 128, 0, 0.1);
+  /* Тень без размытия */
+}
+
+.greenBackground4 {
+  border-radius: 15%;
+  background-color: #5078e7;
+  /* Ярко-зеленый фон */
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  transform: rotate(-45deg);
+  bottom: 50%;
+  left: 55%;
+  z-index: 0;
+  transition: all 0.8s ease;
+  /* Плавная анимация изменений */
+  box-shadow: -20px 20px 0 rgba(0, 128, 0, 0.1);
+  /* Тень без размытия */
+}
+
+.card:hover .greenBackground4 {
+  width: 140%;
+  height: 140%;
+  transform: rotate(0deg);
+  /* Прямоугольник заполняет весь блок */
+  bottom: 0;
+  left: -10%;
+  border-radius: 2rem;
+  /* Скругление углов, чтобы совпадало с блоком */
+}
+
+.card:hover .greenBackground3 {
+  width: 140%;
+  height: 140%;
+  transform: rotate(0deg);
+  /* Прямоугольник заполняет весь блок */
+  bottom: 0;
+  left: -10%;
+  border-radius: 2rem;
+  /* Скругление углов, чтобы совпадало с блоком */
+}
+
+.card:hover .greenBackground2 {
+  width: 140%;
+  height: 140%;
+  transform: rotate(0deg);
+  /* Прямоугольник заполняет весь блок */
+  bottom: 0;
+  left: -10%;
+  border-radius: 2rem;
+  /* Скругление углов, чтобы совпадало с блоком */
+}
+
+.card:hover .greenBackground {
+  width: 140%;
+  height: 140%;
+  transform: rotate(0deg);
+  /* Прямоугольник заполняет весь блок */
+  bottom: 0;
+  left: -10%;
+  border-radius: 2rem;
+  /* Скругление углов, чтобы совпадало с блоком */
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.label_container {
+  position: relative;
+  display: inline-block;
+
+}
+
+.notification_badge {
+  position: absolute;
+  top: -10px;
+  /* Сдвиг сверху */
+  right: -25px;
+  /* Сдвиг справа */
+  border: 1px solid #666666;
+  /* Синий фон по умолчанию */
+  color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* Делает круг */
+  font-size: 14px;
+  padding: 12px;
+  color: #1b1b1b;
+  transition: background-color 0.3s ease;
+}
+
+.label_container:hover .notification_badge {
+  background-color: #90da6e;
+  /* Зеленый при наведении на текст или кружок */
 }
