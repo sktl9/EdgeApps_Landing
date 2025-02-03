@@ -1,0 +1,57 @@
+.callUs {
+    width: 300px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: poin20px;
+    font-size: 14pter;
+
+    font-weight: 500;
+    line-height: 140%;
+    color: #ffffff;
+    /* Исходный цвет текста */
+    background-color: transparent;
+    text-wrap: nowrap;
+    border-radius: 6rem;
+    overflow: hidden;
+    transition: color 1.3s ease, background-color 1.3s ease;
+    /* Плавное изменение цвета и фона */
+    font-size: clamp(12px, 9px, 12px);
+  
+    &:hover {
+      color: #1b1b1b;
+      /* Цвет текста при наведении, например, темно-серый */
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      /* Начинаем с левого верхнего угла */
+      top: 0;
+      width: 6.7rem;
+      height: 6.7rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      z-index: -1;
+      transform-origin: center;
+      transform: scale(0);
+      transition: transform 1.3s ease-in-out;
+    }
+  
+    &:hover::before {
+      transform: scale(5);
+      /* Увеличиваем до полного размера */
+    }
+  
+    &--active {
+      border: 2px solid #ffffff;
+      /* Если нужен выделенный активный стиль */
+    }
+  
+  }

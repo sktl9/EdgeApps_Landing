@@ -1,0 +1,57 @@
+.block1 {
+    z-index: 100;
+    position: relative;
+    width: 300px; /* Ширина блока */
+    height: 200px; /* Высота блока */
+    padding: 16px;
+    border-radius: 5%; /* Закругление углов */
+    overflow: hidden; /* Обрезка содержимого */
+background-color: beige;
+  }
+  
+  .block1::after {
+    z-index: 100;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; /* Покрытие ширины для выреза */
+    height: 100%;
+    background-color: #0041F9; /* Цвет выреза */
+    clip-path: polygon(
+      100% 0,  /* Верхний правый угол */
+      70% 0,   /* Сместить линию влево */
+      90% 50%, /* Треугольный вырез в центре */
+      70% 100%,/* Нижняя точка линии */
+      100% 100% /* Вернуться к правому краю */
+    );
+  }
+
+  .block2 {
+    z-index: 100;
+    position: relative;
+    width: 300px; /* Ширина блока */
+    height: 200px; /* Высота блока */
+    padding: 16px;
+    border-radius: 5%; /* Закругление углов */
+    overflow: hidden; /* Обрезка содержимого */
+background-color: beige;
+  }
+  
+  .block2::after {
+    z-index: 100;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; /* Покрытие ширины для выреза */
+    height: 100%;
+    background-color: #0041F9; /* Цвет выреза */
+    clip-path: polygon(
+      0 0,  /* Верхний правый угол */
+      30% 0,   /* Сместить линию влево */
+      10% 50%, /* Треугольный вырез в центре */
+      30% 100%,/* Нижняя точка линии */
+      0 100% /* Вернуться к правому краю */
+    );
+  }

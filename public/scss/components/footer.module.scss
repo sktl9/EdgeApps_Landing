@@ -1,0 +1,66 @@
+
+
+  /* Форма */
+  .form_container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form_title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 300; /* font-light */
+    text-align: center;
+    color: #2196F3; /* text-blue-500 */
+  }
+  
+  .form_subtitle {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000; /* text-gray-400 */
+  }
+  
+  .form_separator {
+    background-color: #2196F3; /* bg-blue-500 */
+    height: 2px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Группа инпутов */
+  .input_group {
+    position: relative;
+    margin: 1.5rem 0; /* my-6 */
+  }
+  
+  /* Инпуты */
+  .input_field {
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 1.125rem; /* text-lg */
+    padding: 0.5rem; /* p-2 */
+    width: 97%;
+    transition: var(--trans-time);
+    outline: none;
+  }
+  
+  .input_field::placeholder {
+    color: #1a1a1a; /* text-gray-400 */
+  }
+  
+  .input_label {
+    color: #000000;
+    font-weight: 300;
+    position: absolute;
+    left: 0.5rem; /* left-2 */
+    top: 0.5rem; /* top-2 */
+    transition: all var(--trans-time);
+  }
+  
+  .input_field:focus ~ .input_label,
+  .input_field:not(:placeholder-shown) ~ .input_label {
+    top: -14px;
+    font-size: 0.875rem; /* text-sm */
+    opacity: 0.45;
+  }
+  

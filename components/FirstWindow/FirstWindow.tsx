@@ -68,7 +68,7 @@ export const FirstWindow = ({ setActivePage }: any) => {
 
             </span>
             <div className={style.news}>
-              <span className={style.spanAbout}>Компания iFellow начала оказывать поддержку в миграции Jira и Confluence из зарубежных облаков</span>
+              <span className={style.spanAbout}>Компания EdgeApps начала оказывать поддержку в миграции Jira и Confluence из зарубежных облаков</span>
               <span className={style.spanAbout}>Подбирать IТ-специалистов сложно, но интересно</span>
             </div>
 

@@ -214,6 +214,8 @@ $btn-hover-bg: #3d97c0;
 
 .ultraFooter {
   &__main {
+    margin-top: 20px;
+    padding: 0% 10%;
     height: 64px;
     max-width: 100vw;
     display: flex;
@@ -222,7 +224,7 @@ $btn-hover-bg: #3d97c0;
     align-items: center;
     flex-shrink: 0;
     font-family: $font-family-main;
-    padding: 0px 20px;
+
     top: 0;
     left: 0;
     right: 0;

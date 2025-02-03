@@ -1,0 +1,63 @@
+.callUs {
+    margin-left: 1%;
+    max-width: 200px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid #1b1b1b;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    color: #1b1b1b;
+    /* Исходный цвет текста */
+    background-color: transparent;
+    text-wrap: nowrap;
+    border-radius: 6rem;
+    overflow: hidden;
+    transition: color 1.3s ease, background-color 1.3s ease;
+    /* Плавное изменение цвета и фона */
+    font-size: clamp(12px, 9px, 12px);
+  
+    &:hover {
+      color: #ffffff;
+      /* Цвет текста при наведении, например, темно-серый */
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      /* Начинаем с левого верхнего угла */
+      top: 0;
+      width: 6.7rem;
+      height: 6.7rem;
+      background-color: #0041F9;
+      border-radius: 50%;
+      z-index: -1;
+      transform-origin: center;
+      transform: scale(0);
+      transition: transform 0.9s ease-in-out;
+    }
+  
+    &:hover::before {
+      transform: scale(3);
+      /* Увеличиваем до полного размера */
+    }
+  
+    &--active {
+      border: 2px solid #ffffff;
+      /* Если нужен выделенный активный стиль */
+    }
+  
+    &.scrolled {
+      background-color: #ffffff; // Фон при прокрутке
+      color: #333333; // Цвет текста при прокрутке
+      border: 1px solid #333333;
+    }
+  }

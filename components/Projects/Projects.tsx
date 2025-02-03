@@ -36,9 +36,7 @@ const Price = () => {
                             <Link href="#ultraFooter" className={style.callUs}>
                                 <span>
                                     {actual == 'products' ? "Смотреть все продукты" : "Смотреть все услуги"}
-
                                 </span>
-
                             </Link>
                         </div>
                     </div>

@@ -5,10 +5,10 @@ import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import { useInView } from "react-intersection-observer";
-
+import style from "../../public/scss/components/footer.module.scss";
 // http://localhost:3000/ru/authorization/
 
-const LandingHeader = ({ setActivePage }: any) => {
+const LandingHeader = () => {
   const pathname = usePathname();
   const locale = pathname;
   const locale1 = pathname.split("/")[1];
@@ -21,14 +21,6 @@ const LandingHeader = ({ setActivePage }: any) => {
   const [contactRef, inView] = useInView({
     threshold: 0.5,
   });
-
-  const inViewValue = inView;
-
-  useEffect(() => {
-    if (inViewValue) {
-      setActivePage("Contact");
-    }
-  }, [inViewValue]);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -56,121 +48,62 @@ const LandingHeader = ({ setActivePage }: any) => {
 
   return (
     <>
-      <div
-        id="contact"
-        ref={contactRef}
-        className={`footer-background ${
-          isRussian ? "footer-background-ru" : ""
-        } ${isKazakh ? "footer-background-kz" : ""} ${
-          isEnglish ? "footer-background-en" : ""
-        }`}
-      >
-        <div className="footer-container">
-          <h1 className="footer-title">
-            Sign up for updates and exclusive launch offers!
-          </h1>
-
-          {/* <p className="footer-p">
-            Subscribe for notifications and receive special offers!
-          </p> */}
-          <div className="form__container">
-            <form ref={form} onSubmit={sendEmail}>
-              <div className="form__group">
-                <label htmlFor="name" className="form__label">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="user_name"
-                  name="user_name"
-                  placeholder="Brian Clark"
-                  className="form__input"
-                  required
-                />
+      <div>
+        <div className="flex flex-col lg:flex-row w-full px-[10%] mt-[50px] gap-[20px]">
+          <div className="min-w-[45%] h-[280px] flex flex-col bg-[#f9f9f9] rounded-[2rem] p-10">
+            <div className="flex h-full flex-col justify-between">
+              <div>
+                <span className="text-[16px] font-semibold">Подписывайтесь на рассылку наших новостей и мероприятий</span>
               </div>
-              <div className="form__group">
-                <label htmlFor="email" className="form__label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="user_email"
-                  name="user_email"
-                  placeholder="example@youremail.com"
-                  className="form__input"
-                  required
-                />
-              </div>
-              <div className="form__afterButton">
-                <button type="submit" className="form__button">
-                  Send →
+              <div className="input-group flex items-center border-b border-gray-400">
+                <input type="email" id="mailSend" className={style.input_field} placeholder="" required />
+                <label htmlFor="mailSend" className={style.input_label}>Почта</label>
+                <span className={style.input_bar}></span>
+                <button className="ml-2 px-4 py-2 text-black ">
+                  Подписать
                 </button>
-                {messageSent && (
-                  <div className="form__message">
-                    Message Sent Successfully!
-                  </div>
-                )}
-              </div>
-            </form>
-          </div>
-          <h2 className="footer-h2">Want to reach out directly?</h2>
-
-          <p className="footer-p1">
-            Connect with Us Personally for Direct Communication
-          </p>
-          <div className="contact-card">
-            <div className="contact-info">
-              <div className="contact-info__email">
-                <Image
-                  className="contact-info__icon contact-info__icon--email"
-                  src={"/static/icons/email.svg"}
-                  alt={"email"}
-                  width={50}
-                  height={50}
-                />
-                <div className="contact-info__data">
-                  <h2 className="contact-info__h2">Email</h2>
-                  <a
-                    href="mailto:example@email.com"
-                    className="contact-info__p2"
-                  >
-                    sales@beyim.ai
-                  </a>
-                </div>
-              </div>
-              <div className="contact-info__website">
-                <Image
-                  className="contact-info__icon contact-info__icon--website"
-                  src={"/static/icons/website.svg"}
-                  alt={"website"}
-                  width={50}
-                  height={50}
-                />
-                <div className="contact-info__data">
-                  <h2 className="contact-info__h2">Website</h2>
-                  <a
-                    href="https://beyim.ai/"
-                    className="contact-info__p2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    beyim.ai
-                  </a>
-                </div>
-              </div>
-              <div className="contact-card__qr">
-                <Image
-                  src={"/static/icons/qr.svg"}
-                  alt="QR code placeholder image with a grid pattern"
-                  className="contact-card__image"
-                  width={85}
-                  height={85}
-                />
               </div>
             </div>
           </div>
+          <div className="w-full justify-center gap-[20px] hidden sm:flex">
+             <div className="flex flex-col gap-1 w-[33%]">
+            <span>Клиентам и Партнерам</span>
+            <div className="font-extralight flex flex-col items-start text-nowrap">
+              <button>Продукты</button>
+              <button>Услуги</button>
+              <button>Импортзамещение</button>
+              <button>Проекты</button>
+              <button>Отрасли</button>
+              <button>Медиацентр</button>
+            </div>
+
+          </div>
+          <div className="flex flex-col gap-1 w-[33%]">
+            <span>Соискателям</span>
+            <div className="font-extralight flex flex-col items-start text-nowrap">
+              <button>Карьера</button>
+              <button>Жизнь в компании</button>
+              <button>Вакансии</button>
+            </div>
+
+          </div>
+          <div className="flex flex-col gap-1 w-[33%]">
+            <span>О компании</span>
+            <div className="font-extralight flex flex-col items-start text-nowrap">
+              <button>О компании</button>
+              <button>Контакты</button>
+              <button>Наша команда</button>
+              <button>Клиенты</button>
+              <button>Партнеры</button>
+
+            </div>
+          </div>
+         
+
+          </div>
         </div>
       </div>
+
     </>
   );
 };

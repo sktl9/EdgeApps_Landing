@@ -33,12 +33,11 @@ const UltraFooter = () => {
 
   return (
     <>
-      {/* <div style={{ height: "64px" }}></div> */}
       <div className="ultraFooter__main">
         <div className="ultraFooter__nav">
           <Link href={`/${locale1}/`}>
             <Image
-              src="/static/icons/synaq-logo.svg"
+              src={`/static/icons/edgeLogo.svg`}
               alt="Logo"
               className="header__nav__img"
               width={156}
@@ -46,7 +45,7 @@ const UltraFooter = () => {
             />
           </Link>
         </div>
-        <h2 className="ultraFooter__h2">BeyimTech LLC © 2024</h2>
+        <h2 className="ultraFooter__h2">EdgeApps LLC © 2024</h2>
         <div className="ultraFooter__right">
           <Link
             className="footer-aa"
