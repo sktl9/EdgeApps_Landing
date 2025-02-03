@@ -1,0 +1,52 @@
+stages:
+  - install
+  - build
+  - notify
+
+install:
+  stage: install
+  script:
+    - npm install --force
+  only:
+    - main
+  tags:
+    - dnslocal_50.50
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+
+build:
+  stage: build
+  script:
+    - CI=false
+    - npm run build
+    - cp -r build/* /landing
+    #- curl --insecure  -s --header 'Content-Type:application/json' --request 'POST' --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Project:$CI_PROJECT_NAME\nURL:$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID/\nBranch:$CI_COMMIT_REF_SLUG\nUser:$GITLAB_USER_NAME\nDeploy success message ✅\"}" "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - $CI_PROJECT_DIR/build
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+  only:
+    - main
+  tags:
+    - ctnt_frontend_stage
+
+notify_error:
+  stage: notify
+  script:
+    #- curl --insecure  -s --header 'Content-Type:application/json' --request 'POST' --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Project:$CI_PROJECT_NAME\nURL:$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID/\nBranch:$CI_COMMIT_REF_SLUG\nUser:$GITLAB_USER_NAME\nDeploy fail message ❌\"}" "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
+    - echo ERROR
+  when: on_failure
+  only:
+    - main
+  tags:
+    - ctnt_frontend_stage
