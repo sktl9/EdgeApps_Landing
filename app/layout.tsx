@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Metadata } from "next";
 
 export const generateMetadata = (): Metadata => {
-  const titleEn = "Beyim Demo Ai - Microlearning Social Network";
+  const titleEn = "EdgeApps";
 
   return {
     title: titleEn,
