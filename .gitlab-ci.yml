@@ -10,7 +10,7 @@ install:
   only:
     - main
   tags:
-    - dnslocal_50.50
+    - ctnt_frontend_stage
   cache:
     key:
       files:
