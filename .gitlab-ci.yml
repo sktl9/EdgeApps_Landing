@@ -23,7 +23,8 @@ build:
   script:
     - CI=false
     - npm run build
-    - cp -r build/* /landing
+    - pkill npm
+    - npm run dev &
     #- curl --insecure  -s --header 'Content-Type:application/json' --request 'POST' --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Project:$CI_PROJECT_NAME\nURL:$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID/\nBranch:$CI_COMMIT_REF_SLUG\nUser:$GITLAB_USER_NAME\nDeploy success message ✅\"}" "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
   artifacts:
     expire_in: 1 day
