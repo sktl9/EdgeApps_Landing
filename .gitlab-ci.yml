@@ -18,8 +18,8 @@ install:
     paths:
       - node_modules
 
-before_script:
-    - pkill npm
+#before_script:
+#   - pkill npm
 
 build:
   stage: build
