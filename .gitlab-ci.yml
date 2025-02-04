@@ -18,8 +18,9 @@ install:
     paths:
       - node_modules
 
-before_script:
-    - pkill -f "npm"
+#before_script:
+#    - CI=false
+#    - pkill -f "npm"
 
 build:
   stage: build
@@ -27,7 +28,7 @@ build:
     CI: "false"
   script:
     #- CI=false
-    - npm run build
+    - pkill -f "npm" ; npm run build
     - npm run dev > dev-server.log 2>&1 &
     #- curl --insecure  -s --header 'Content-Type:application/json' --request 'POST' --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Project:$CI_PROJECT_NAME\nURL:$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID/\nBranch:$CI_COMMIT_REF_SLUG\nUser:$GITLAB_USER_NAME\nDeploy success message ✅\"}" "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
   artifacts:
