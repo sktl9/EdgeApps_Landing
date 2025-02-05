@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import { useInView } from "react-intersection-observer";
 import style from "../../public/scss/components/footer.module.scss";
+import Link from "next/link";
 // http://localhost:3000/ru/authorization/
 
 const LandingHeader = () => {
@@ -49,36 +50,34 @@ const LandingHeader = () => {
   return (
     <>
       <div>
-        <div className="flex flex-col lg:flex-row w-full px-[10%] mt-[50px] gap-[20px]">
-          <div className="min-w-[45%] h-[280px] flex flex-col bg-[#f9f9f9] rounded-[2rem] p-10">
-            <div className="flex h-full flex-col justify-between">
-              <div>
-                <span className="text-[16px] font-semibold">Подписывайтесь на рассылку наших новостей и мероприятий</span>
-              </div>
-              <div className="input-group flex items-center border-b border-gray-400">
-                <input type="email" id="mailSend" className={style.input_field} placeholder="" required />
-                <label htmlFor="mailSend" className={style.input_label}>Почта</label>
-                <span className={style.input_bar}></span>
-                <button className="ml-2 px-4 py-2 text-black ">
-                  Подписать
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="w-full justify-center gap-[20px] hidden sm:flex">
-             <div className="flex flex-col gap-1 w-[33%]">
+        <div className="flex flex-col sm:flex-row w-full px-[10%] mt-[50px] gap-[40px] mb-[20px]">
+          <div className="flex flex-col justify-between">
+                  <div >
+                    <Link href={`/${locale1}/`}>
+                      <Image
+                        src={`/static/icons/edgeLogo.svg`}
+                        alt="Logo"
+                        width={156}
+                        height={34}
+                      />
+                    </Link>
+                  </div>
+                  <h2 className="ultraFooter__h2">EdgeApps © 2024</h2>
+                </div>
+          <div className="flex justify-end w-full  gap-[40px] hidden sm:flex">
+             <div className="flex flex-col gap-1 ">
             <span>Клиентам и Партнерам</span>
             <div className="font-extralight flex flex-col items-start text-nowrap">
               <button>Продукты</button>
               <button>Услуги</button>
-              <button>Импортзамещение</button>
+
               <button>Проекты</button>
               <button>Отрасли</button>
               <button>Медиацентр</button>
             </div>
 
           </div>
-          <div className="flex flex-col gap-1 w-[33%]">
+          <div className="flex flex-col gap-1 ">
             <span>Соискателям</span>
             <div className="font-extralight flex flex-col items-start text-nowrap">
               <button>Карьера</button>
@@ -87,7 +86,7 @@ const LandingHeader = () => {
             </div>
 
           </div>
-          <div className="flex flex-col gap-1 w-[33%]">
+          <div className="flex flex-col gap-1  ">
             <span>О компании</span>
             <div className="font-extralight flex flex-col items-start text-nowrap">
               <button>О компании</button>
