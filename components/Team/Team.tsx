@@ -56,7 +56,7 @@ const Team = () => {
                         <img
                             src="https://via.placeholder.com/100"
                             alt="Person 2"
-                            className="absolute sm:w-[13%] w-[18%] h-[60px] sm:top-[15%] top-[15%] sm:left-[78%] left-[55%] rounded-lg shadow-md bg-red-200"
+                            className="absolute sm:w-[21%] w-[18%] h-[60px] sm:h-[100px] sm:top-[5%] top-[15%] sm:left-[78%] left-[55%] rounded-lg shadow-md bg-red-200"
                         />
                         <img
                             src="https://via.placeholder.com/100"

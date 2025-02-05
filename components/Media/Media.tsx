@@ -34,7 +34,7 @@ const Media = () => {
             <div className="px-[10%] mt-[50px]">
                 <div className="flex flex-col gap-[30px]">
                     <div className="flex justify-between pb-4 border-b border-gray-400">
-                        <span className="">Надежный ИТ-партнер</span>
+                        <span className="">Медиа</span>
                         <ButtonLink href="#ultraFooter" text="Смотреть все" />
                     </div>
                     <div className=" relative w-full flex flex-col items-center">

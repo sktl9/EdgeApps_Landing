@@ -1,13 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+
 
 const LandingHeader = ({ activePage }: any) => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const locale1 = pathname.split("/")[1];
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +25,14 @@ const LandingHeader = ({ activePage }: any) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  
   return (
     <>
       <div className={`header__main ${scrolled ? "scrolled" : ""}`}>
         <div className="main__content">
           <div className="header__nav">
             <div>
-              <Link href={`/${locale1}/`}>
+            <Link href={`/`} scroll={true}>
                 <Image
                   src={`/static/icons/${scrolled ? "edgeLogo.svg" : "edgeLogoWhite.svg"}`}
                   alt="Logo"
@@ -70,10 +72,10 @@ const LandingHeader = ({ activePage }: any) => {
                   ? "header__button--active"
                   : "header__button"
               }
-              href="#team"
+              href="/about"
               locale="kz"
             >
-              Импортозамещение
+              О нас
             </Link>
             <Link
               className={

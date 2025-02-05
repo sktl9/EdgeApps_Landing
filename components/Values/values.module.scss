@@ -1,0 +1,31 @@
+.block1 {
+    z-index: 100;
+    height: 270px;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Чтобы изображение было по центру */
+}
+
+.block1 img {
+    width: 198px;
+    height: 250px;
+    transition: transform 0.3s ease-in-out; /* Плавная анимация */
+}
+
+.block1:hover img {
+    transform: scale(1.1); /* Увеличиваем картинку при наведении */
+}
+
+@media (max-width: 725px) {
+    .block1 {
+        height: 270px;
+        border-radius: 5%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

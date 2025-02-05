@@ -6,32 +6,32 @@ import { useInView } from "react-intersection-observer";
 
 // http://localhost:3000/ru/authorization/
 
-const Price = () => {
+const Service = () => {
     const [actual, setActual] = useState('products')
     return (
         <>
             <div className={style.mainContainer}>
                 <div className={style.actual}>
-                    <span className={style.actualSpan}>Актуальное</span>
+                    {/* <span className={style.actualSpan}>Актуальное</span> */}
                     <div className="flex lg:flex-col  ">
                         <div className=" flex-col justify-between lg:flex lg:flex-row w-[50%] lg:w-full gap-[5px] ">
                             <span className={`${style.label_container} text-[25px] md:text-[50px] sm:text-[40px] cursor-pointer ${actual == 'products' ? '' : 'opacity-25 hover:opacity-40 transition-opacity duration-300'}`}
                                 onClick={() => setActual('products')}
-                            >Продукты
-                            <span className={style.notification_badge}>7</span>
+                            >Услуги
+                                <span className={style.notification_badge}>7</span>
                             </span>
                             <span className="flex font-[16px] max-w-[50%] items-center pl-[1%]">
-                                Собственные продукты и программное обеспечение ведущих вендоров для решения бизнес-задач любой сложности
+                            От консалтинга и заказной разработки до технической поддержки с необходимым уровнем SLA
                             </span>
                         </div>
                         <div className="flex-col lg:flex lg:flex-row w-[50%] lg:w-full gap-[5px] items-center">
                             <div className="flex w-[50%]">
-                                
+                               
                             </div>
-                            
+
                             <Link href="#ultraFooter" className={style.callUs}>
                                 <span>
-                                    {actual == 'products' ? "Смотреть все продукты" : "Смотреть все услуги"}
+                                     Смотреть все услуги
                                 </span>
                             </Link>
                         </div>
@@ -125,4 +125,4 @@ const Price = () => {
     );
 };
 
-export default Price;
+export default Service;

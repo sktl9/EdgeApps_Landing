@@ -1,6 +1,6 @@
 "use client";
 
-import "../public/scss/style.css"
+import "../../public/scss/style.css"
 // import "../public/scss/style.css";
 import LandingHeader from "@/components/Header/LandingHeader";
 import Projects from "@/components/Projects/Projects"
@@ -18,29 +18,25 @@ import Clients from "@/components/Clients/Clients";
 import Academy from "@/components/Academy/Academy";
 import CallUs from "@/components/CallUs/CallUs";
 import Service from "@/components/services/service";
+import { HalfFirstWindow } from "@/components/HalfFirstWindow/HalfFirstWindow";
+import Director from "@/components/Director/Director";
+import Value from "@/components/Values/Value";
 
 const Footer = dynamic(() => import("@/components/Footer/Footer"), {
-  ssr: false,
+    ssr: false,
 });
 
 export default function Home() {
-  const [activePage, setActivePage] = useState("");
+    const [activePage, setActivePage] = useState("");
 
-  return (
-    <>
-      <LandingHeader activePage={activePage} />
-      <FirstWindow setActivePage={setActivePage} />
-      <Projects />
-      <Service/>
-      <Advantages/>
-      <Media/>
-      <Team/>
-      {/* <Clients/> */}
-      <Academy/>
-      <CallUs/>
-      {/* <Team setActivePage={setActivePage} /> */}
-      <Footer />
-      <UltraFooter />
-    </>
-  );
+    return (
+        <>
+            <LandingHeader activePage={activePage} />
+            <HalfFirstWindow />
+            <Director />
+            <Value/>
+            <UltraFooter />
+            
+        </>
+    );
 }
