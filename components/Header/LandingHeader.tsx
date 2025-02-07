@@ -11,6 +11,13 @@ const LandingHeader = ({ activePage }: any) => {
   const locale1 = pathname.split("/")[1];
   const router = useRouter();
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -44,17 +51,12 @@ const LandingHeader = ({ activePage }: any) => {
             </div>
           </div>
           <div className="header__setting">
-            <Link
-              className={
-                activePage == "Features"
-                  ? "header__button--active"
-                  : "header__button"
-              }
-              href="#features"
-              locale="kz"
-            >
-              Продукты
-            </Link>
+          <button
+            className={activePage == "Features" ? "header__button--active" : "header__button"}
+            onClick={() => scrollToSection("products")}
+          >
+            Продукты
+          </button>
             <Link
               className={
                 activePage == "Price"
@@ -75,7 +77,7 @@ const LandingHeader = ({ activePage }: any) => {
               href="/about"
               locale="kz"
             >
-              О нас
+              О компании
             </Link>
             <Link
               className={

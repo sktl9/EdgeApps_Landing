@@ -44,13 +44,13 @@ export const HalfFirstWindow = ({ setActivePage }: any) => {
                 <div className={style.underContent}>
                     <div className={style.blockAbout1}>
                         <span className={style.textAbout}>Компания EdgeApps работает на рынке информационных технологий с 2015 года и показывает кратный рост по обороту и численности сотрудников от года к году. Основная специализация — развитие собственных продуктов, заказная разработка, ИТ-консалтинг, тестирование и сопровождение программного обеспечения.</span>
-                        
+
                     </div>
                     <div className={style.blockAbout2}>
-  
-                       
 
-                       
+
+
+
                     </div>
                 </div>
             </div>

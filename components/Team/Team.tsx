@@ -12,7 +12,7 @@ const Team = () => {
                 <div className="lg:min-h-[500px] h-full  flex flex-col lg:flex-row gap-[20px]">
                     <div className="flex lg:w-[40%]  items-center">
                         <div className="flex flex-col gap-[20px]">
-                            <span className="text-[14px] pb-4 border-b border-gray-400">Команда EdgeApss</span>
+                            <span className="text-[14px] pb-4 border-b border-gray-400">Команда EdgeApps</span>
                             <span className="text-[22px] font-bold  lg:text-[55px] leading-none">Технологии делают люди</span>
                             <span className="text-[14px]">Команда — наша главная ценность.
                                 Задача EdgeApps — раскрыть потенциал каждого сотрудника и сфокусировать его на возможностях, которые может дать сфера информационных технологий.</span>
@@ -54,7 +54,7 @@ const Team = () => {
                             className="opacity-0 sm:opacity-100 absolute w-[13%]  h-[60px] top-[10%] left-[22%] rounded-lg shadow-md bg-red-200"
                         />
                         <img
-                            src="https://via.placeholder.com/100"
+                            src="/static/image/group.jpg"
                             alt="Person 2"
                             className="absolute sm:w-[21%] w-[18%] h-[60px] sm:h-[100px] sm:top-[5%] top-[15%] sm:left-[78%] left-[55%] rounded-lg shadow-md bg-red-200"
                         />
@@ -64,9 +64,9 @@ const Team = () => {
                             className="absolute sm:w-[13%] w-[18%] h-[60px] sm:top-[29%] top-[10%] sm:left-[78%] left-[75%] rounded-lg shadow-md bg-red-200"
                         />
                         <img
-                            src="https://via.placeholder.com/200x100"
+                            src="/static/image/group2.jpg"
                             alt="Group"
-                            className="absolute sm:w-[22%] w-[40%] h-[100px] sm:top-[65%] top-[65%] sm:left-[30%] left-[55%] rounded-lg shadow-md bg-red-200"
+                            className="absolute sm:w-[22%] w-[40%] h-[100px] sm:top-[65%] top-[65%] sm:left-[30%] left-[55%] rounded-lg shadow-md bg-red-200 scale-100"
                         />
                         <img
                             src="https://via.placeholder.com/100"

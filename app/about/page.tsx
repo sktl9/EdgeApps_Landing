@@ -21,6 +21,7 @@ import Service from "@/components/services/service";
 import { HalfFirstWindow } from "@/components/HalfFirstWindow/HalfFirstWindow";
 import Director from "@/components/Director/Director";
 import Value from "@/components/Values/Value";
+import Experts from "@/components/experts/Experts";
 
 const Footer = dynamic(() => import("@/components/Footer/Footer"), {
     ssr: false,
@@ -36,7 +37,8 @@ export default function Home() {
             <Director />
             <Value/>
             <UltraFooter />
-            
+            <Experts/>
+            <Footer />
         </>
     );
 }

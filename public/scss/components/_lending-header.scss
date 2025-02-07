@@ -4,7 +4,7 @@ $primary-color: #ffffff;
 $link-margin: 40px;
 $active-border: 1px solid #ffffff;
 $btn-bg-color: #55bbeb;
-$btn-hover-bg: #3d97c0;
+$btn-hover-bg: #ffffff;
 
 .header {
   &__main {
@@ -14,7 +14,6 @@ $btn-hover-bg: #3d97c0;
     display: flex;
     justify-content: center;
     align-items: center;
-
     top: 0;
     left: 0;
     right: 0;
@@ -29,8 +28,9 @@ $btn-hover-bg: #3d97c0;
     }
 
     .header__button {
+      transition: transform 0.3s ease; // Убрали color
       &:hover {
-        color: $btn-hover-bg; // Цвет при наведении
+        transform: scale(1.1);
       }
     }
 
@@ -50,7 +50,8 @@ $btn-hover-bg: #3d97c0;
     gap: 10px;
 
     &__img {
-      margin-right: 2px;
+
+      margin-right: 0px;
     }
   }
 
@@ -92,6 +93,8 @@ $btn-hover-bg: #3d97c0;
   }
 
   &__book {
+    margin-left: 15px;
+    width: 140px;
     position: relative;
     border-radius: 50%;
     border: 1px solid #ffffff;
@@ -104,21 +107,25 @@ $btn-hover-bg: #3d97c0;
     font-size: 14px;
     font-weight: 500;
     line-height: 140%;
-    color: #ffffff; /* Исходный цвет текста */
+    color: #ffffff;
+    /* Исходный цвет текста */
     background-color: transparent;
     text-wrap: nowrap;
     border-radius: 16px;
     overflow: hidden;
-    transition: color 1.3s ease, background-color 1.3s ease; /* Плавное изменение цвета и фона */
-  
+    transition: color 1.3s ease, background-color 1.3s ease;
+    /* Плавное изменение цвета и фона */
+
     &:hover {
-      color: #1b1b1b; /* Цвет текста при наведении, например, темно-серый */
+      color: #1b1b1b;
+      /* Цвет текста при наведении, например, темно-серый */
     }
-  
+
     &::before {
       content: "";
       position: absolute;
-      left: 0; /* Начинаем с левого верхнего угла */
+      left: 0;
+      /* Начинаем с левого верхнего угла */
       top: 0;
       width: 6.7rem;
       height: 6.7rem;
@@ -129,22 +136,24 @@ $btn-hover-bg: #3d97c0;
       transform: scale(0);
       transition: transform 0.9s ease-in-out;
     }
-  
+
     &:hover::before {
-      transform: scale(2.5); /* Увеличиваем до полного размера */
+      transform: scale(2.5);
+      /* Увеличиваем до полного размера */
     }
-  
+
     &--active {
       border: 2px solid #ffffff;
       /* Если нужен выделенный активный стиль */
     }
+
     &.scrolled {
       background-color: #ffffff; // Фон при прокрутке
       color: #333333; // Цвет текста при прокрутке
       border: 1px solid #333333;
     }
   }
-  
+
 
   &__button {
     cursor: pointer;
@@ -155,9 +164,6 @@ $btn-hover-bg: #3d97c0;
     font-weight: 600;
     line-height: normal;
 
-    &:hover {
-      color: #566f7d;
-    }
 
     &--active {
       cursor: pointer;
