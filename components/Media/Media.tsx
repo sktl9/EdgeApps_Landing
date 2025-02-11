@@ -3,16 +3,11 @@ import { useRef, useState } from "react";
 import style from "../../public/scss/components/media.module.scss";
 import classNames from "classnames";
 import ButtonLink from "@/public/static/UI/ButtonLink";
+import content from "../../public/content.json";
+
 
 const Media = () => {
-    const blocks = [
-        { id: 1, title: 'Блок 1', content: 'Контент блока 1' },
-        { id: 2, title: 'Блок 2', content: 'Контент блока 2' },
-        { id: 3, title: 'Блок 3', content: 'Контент блока 3' },
-        { id: 4, title: 'Блок 4', content: 'Контент блока 4' },
-        { id: 5, title: 'Блок 5', content: 'Контент блока 5' },
-        { id: 6, title: 'Блок 6', content: 'Контент блока 6' },
-    ];
+    const blocks = content.media.blocks;
 
     // Состояние для текущего видимого индекса
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,8 +29,8 @@ const Media = () => {
             <div className="px-[10%] mt-[50px]">
                 <div className="flex flex-col gap-[30px]">
                     <div className="flex justify-between pb-4 border-b border-gray-400">
-                        <span className="">Надежный ИТ-партнер</span>
-                        <ButtonLink href="#ultraFooter" text="Смотреть все" />
+                        <span className="">{content.media.title}</span>
+                        {/* <ButtonLink href="#ultraFooter" text="Смотреть все" /> */}
                     </div>
                     <div className=" relative w-full flex flex-col items-center">
                         {/* Контейнер для блоков */}<button
@@ -57,16 +52,23 @@ const Media = () => {
 
                             <div
                                 className="flex transition-transform duration-300"
-                                style={{ transform: `translateX(-${currentIndex * 200}px)` }} // 200px = ширина одного блока
+                                style={{ transform: `translateX(-${currentIndex * 200}px)` }} 
                             >
                                 <div className="flex gap-[1%] gap-y-4">
                                     {blocks.map((block) => (
                                         <div
                                             key={block.id}
                                             className="  flex-col"
+                                           
                                         >
                                             {/* Синий квадрат */}
-                                            <div className={block.id % 2 === 0 ? style.block1 : style.block2}>
+                                            <div
+                                             style={{
+                                                backgroundImage: `url(https://img.youtube.com/vi/${block.youtubeId}/maxresdefault.jpg)`,
+                                                backgroundSize: "cover",
+                                                backgroundPosition: "center",
+                                            }}
+                                             className={block.id % 2 === 0 ? style.block1 : style.block2}>
                                                 <span className="relative text-lg font-bold bg-[#defdff] rounded-[6rem] py-[5px] px-[8px] z-[1000]">
                                                     {block.title}
                                                 </span>
