@@ -1,65 +1,27 @@
 "use client";
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import style from "../../public/scss/components/callUs.module.scss";
 import ButtonLink from "@/public/static/UI/ButtonLink";
 import Link from "next/link";
 import Image from "next/image";
+import content from "../../public/content.json";
 
-const CallUs = () => {
-    const [captchaValue, setCaptchaValue] = useState(null);
+interface ProjectsProps {
+    id?: string;
+}
 
-    const contacts = [
-        {
-            icon: `/static/icons/marker.svg`,
-            title: "НАШ ГЛАВНЫЙ ОФИС",
-            content: "SoHo 94 Broadway St Нью-Йорк, NY 1001",
-        },
-        {
-            icon: `/static/icons/phone.svg`,
-            title: "ТЕЛЕФОННЫЙ НОМЕР",
-            content: "234-9876-5400\n888-0123-4567 (бесплатно)",
-        },
-        {
-            icon: `/static/icons/wathup.svg`,
-            title: "WatsUp",
-            content: "1-234-567-8900",
-        },
-        {
-            icon: `/static/icons/google.svg`,
-            title: "ЭЛЕКТРОННОЕ ПИСЬМО",
-            content: <a href="mailto:hello@theme.com" className="text-blue-600 underline">hello@theme.com</a>,
-        },
-        {
-            icon: `/static/icons/in.svg`,
-            title: "LinkedIn",
-            content: <a href="mailto:hello@theme.com" className="text-blue-600 underline">hello@theme.com</a>,
-        },
-        {
-            icon: `/static/icons/instagram.svg`,
-            title: "Instagram",
-            content: <a href="mailto:hello@theme.com" className="text-blue-600 underline">hello@theme.com</a>,
-        },
-        {
-            icon: `/static/icons/facebook.svg`,
-            title: "Facebook",
-            content: <a href="mailto:hello@theme.com" className="text-blue-600 underline">hello@theme.com</a>,
-        },
-        {
-            icon: `/static/icons/telegram.svg`,
-            title: "Twitter",
-            content: <a href="mailto:hello@theme.com" className="text-blue-600 underline">hello@theme.com</a>,
-        },
-    ];
+const CallUs: React.FC<ProjectsProps> = ({ id }) => {
+
+    const contacts = content.callUs.contacts
 
 
     return (
 
         <>
-            <div className="px-[10%] mt-[100px]">
+            <div id={id} className="px-[10%] mt-[100px]">
                 <div className="flex flex-col gap-[20px]">
                     <div className="flex justify-between pb-4 border-b border-gray-400">
-                        <span className="">Свяжитесь с нами</span>
+                        <span className="">{content.callUs.title}</span>
                     </div>
                     <div className="flex flex-wrap justify-between gap-6 pt-[20px]">
                         {contacts.map((contact, index) => (

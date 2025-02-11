@@ -13,6 +13,7 @@
     "classnames": "^2.5.1",
     "email-js": "^2.0.2",
     "next": "14.0.4",
+    "next-seo": "^6.6.0",
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import content from "../../public/content.json";
 
 
 const LandingHeader = ({ activePage }: any) => {
@@ -32,14 +33,14 @@ const LandingHeader = ({ activePage }: any) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <>
       <div className={`header__main ${scrolled ? "scrolled" : ""}`}>
         <div className="main__content">
           <div className="header__nav">
             <div>
-            <Link href={`/`} scroll={true}>
+              <Link href={`/`} scroll={true}>
                 <Image
                   src={`/static/icons/${scrolled ? "edgeLogo.svg" : "edgeLogoWhite.svg"}`}
                   alt="Logo"
@@ -51,22 +52,30 @@ const LandingHeader = ({ activePage }: any) => {
             </div>
           </div>
           <div className="header__setting">
-          <button
-            className={activePage == "Features" ? "header__button--active" : "header__button"}
-            onClick={() => scrollToSection("products")}
-          >
-            Продукты
-          </button>
+            <Link
+            className={
+              activePage == "Price"
+                ? "header__button--active"
+                : "header__button"
+            }
+              href="/#products"
+              onClick={(e) => {
+                e.preventDefault(); // Остановить стандартный переход
+                router.push("/#products"); // Перейти на страницу с якорем
+              }}
+            >
+              {content.header.products}
+            </Link>
             <Link
               className={
                 activePage == "Price"
                   ? "header__button--active"
                   : "header__button"
               }
-              href="#price"
+              href="/#services"
               locale="kz"
             >
-              Услуги
+              {content.header.services}
             </Link>
             <Link
               className={
@@ -77,7 +86,7 @@ const LandingHeader = ({ activePage }: any) => {
               href="/about"
               locale="kz"
             >
-              О компании
+              {content.header.about}
             </Link>
             <Link
               className={
@@ -85,18 +94,18 @@ const LandingHeader = ({ activePage }: any) => {
                   ? "header__button--active"
                   : "header__button"
               }
-              href="#contact"
+              href="#partners"
               locale="kz"
             >
-              Партнеры
+              {content.header.partners}
             </Link>
           </div>
           <div className="header__right">
-            <Link href="#ultraFooter" className={`header__book ${scrolled ? "scrolled" : ""}`}>
-            <span>
-              Связаться с нами
-            </span>
-              
+            <Link href="#callUs" className={`header__book ${scrolled ? "scrolled" : ""}`}>
+              <span>
+              {content.header.contact}
+              </span>
+
             </Link>
           </div>
         </div>

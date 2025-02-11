@@ -2,24 +2,28 @@
 import ButtonLink from "@/public/static/UI/ButtonLink";
 import style from "../../public/scss/components/academy.module.scss";
 import AcademyBg from '../../public/academyBg.svg';
+import content from "../../public/content.json";
 
-const Academy = ({ setActivePage }: any) => {
+interface ProjectsProps {
+    id?: string;
+}
+
+const Academy: React.FC<ProjectsProps> = ({ id }) => {
 
     return (
         <>
-            <div className="px-[10%] mt-[100px]">
+            <div id={id} className="px-[10%] mt-[100px]">
                 <div className="flex flex-col gap-[20px]">
                     <div className="flex flex-col bg-[#f9f9f9] rounded-[2rem] overflow-hidden">
                         <div className="min-h-[500px] p-[50px] flex overflow-hidden flex-col lg:flex-row">
                             <div className="lg:max-w-[60%] flex flex-col gap-[20px]">
-                                <span className="text-[22px] font-bold  lg:text-[55px]">Академия EdgeApps</span>
+                                <span className="text-[22px] font-bold  lg:text-[55px]">{content.academy.title}</span>
                                 <div className=" flex flex-col lg:flex-row ">
                                     <div className="flex flex-col gap-[5px] lg:w-[50%] text-gray-500">
-                                        Прокачай себя в ИТ! Студенты нашей Академии проходят практику на внутренних проектах и получают сертификат государственного образца.
-                                    </div>
+                                        {content.academy.description}                                    </div>
 
                                 </div>
-                                <ButtonLink href={123} text="Хочу учиться" />
+                                {/* <ButtonLink href={123} text="Хочу учиться" /> */}
                             </div>
 
                             <div className="relative flex flex-col w-full items-center mt-[50px] gap-[20px]">
@@ -44,7 +48,7 @@ const Academy = ({ setActivePage }: any) => {
                                     <span className="flex items-center text-[2vw] font-thin">+40</span>
                                 </div>
                                 <span className="text-[20px] font-normal max-w-[40%]">
-                                    Преподаватели — штатные эксперты edgeApps.
+                                    {content.academy.additional_info}
                                 </span>
                             </div>
 
@@ -53,16 +57,14 @@ const Academy = ({ setActivePage }: any) => {
                             {/* Первая полоса - слева направо */}
                             <div className={`${style.marquee} ${style.first}`}>
                                 <span>
-                                    ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀
-                                </span>
+                                    {content.academy.marquee_text}                                </span>
 
                             </div>
 
                             {/* Вторая полоса - справа налево */}
                             <div className={`${style.marquee} ${style.second}`}>
                                 <span>
-                                    ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀 ИТ-специальность с нуля или повышение квалификации 🚀
-                                </span>
+                                    {content.academy.marquee_text}                                    </span>
 
                             </div>
                         </div>
