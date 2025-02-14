@@ -21,6 +21,7 @@ import Service from "@/components/services/service";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 
 const Footer = dynamic(() => import("@/components/Footer/Footer"), {
   ssr: false,
@@ -44,7 +45,7 @@ export default function Home() {
   }, [pathname]); // Следим за изменением маршрута
   return (
     <>
-      <NextSeo
+      {/* <NextSeo
         title="EdgeApps – Инновационные решения для бизнеса"
         description="EdgeApps – передовая платформа для управления бизнес-процессами. Ускорьте работу, автоматизируйте рутину и достигайте новых высот!"
         canonical="http://178.22.171.60:3331"
@@ -64,7 +65,13 @@ export default function Home() {
           site_name: "EdgeApps",
         }}
        
-      />
+      /> */}
+
+      <Head>
+        <title>EdgeApps – Инновационные решения для бизнеса</title>
+        <meta name="description" content="EdgeApps – передовая платформа для управления бизнес-процессами. Ускорьте работу, автоматизируйте рутину и достигайте новых высот!" />
+        <link rel="canonical" href="http://178.22.171.60:3331" />
+      </Head>
 
 
       <LandingHeader />

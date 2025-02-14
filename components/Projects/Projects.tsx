@@ -52,10 +52,10 @@ const Price: React.FC<ProjectsProps> = ({ id }) => {
                                 </div>
                                 <div className="relative text-[16px] w-[60%] ">
                                     <div className="transition-all duration-300 ease-in-out group-hover:translate-y-[-15px]">
-                                    {content.projects.items[0].name}
+                                        {content.projects.items[0].name}
                                     </div>
                                     <div className=" text-[12px] font-light absolute left-0 right-0 top-[93%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                    {content.projects.items[0].details}
+                                        {content.projects.items[0].details}
                                     </div>
                                 </div>
                             </div>
@@ -72,10 +72,10 @@ const Price: React.FC<ProjectsProps> = ({ id }) => {
                                 </div>
                                 <div className="relative text-[16px] w-[60%] ">
                                     <div className="transition-all duration-300 ease-in-out group-hover:translate-y-[-15px]">
-                                    {content.projects.items[1].name}
+                                        {content.projects.items[1].name}
                                     </div>
                                     <div className=" text-[12px] font-light absolute left-0 right-0 top-[93%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                    {content.projects.items[1].details}
+                                        {content.projects.items[1].details}
 
                                     </div>
                                 </div>
@@ -93,10 +93,10 @@ const Price: React.FC<ProjectsProps> = ({ id }) => {
                                 </div>
                                 <div className="relative text-[16px] w-[60%] ">
                                     <div className="transition-all duration-300 ease-in-out group-hover:translate-y-[-15px]">
-                                    {content.projects.items[2].name}
+                                        {content.projects.items[2].name}
                                     </div>
                                     <div className=" text-[12px] font-light absolute left-0 right-0 top-[93%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                    {content.projects.items[2].details}
+                                        {content.projects.items[2].details}
                                     </div>
                                 </div>
                             </div>
@@ -113,10 +113,10 @@ const Price: React.FC<ProjectsProps> = ({ id }) => {
                                 </div>
                                 <div className="relative text-[16px] w-[60%] ">
                                     <div className="transition-all duration-300 ease-in-out group-hover:translate-y-[-15px]">
-                                    {content.projects.items[3].name}
+                                        {content.projects.items[3].name}
                                     </div>
                                     <div className=" text-[12px] font-light absolute left-0 right-0 top-[93%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                    {content.projects.items[3].details}
+                                        {content.projects.items[3].details}
                                     </div>
                                 </div>
                             </div>
